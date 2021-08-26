@@ -12,6 +12,10 @@ then
     echo "Use no options to automatically determine what you are searching."
     exit
 
+elif [ "$*" == "" ]
+then
+    open -a /Applications/Google\ Chrome.app
+
 elif echo $* | grep -e "-f" -q
 then
     open -a /Applications/Google\ Chrome.app "$1"
