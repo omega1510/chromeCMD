@@ -8,7 +8,7 @@ then
     echo ""
     echo "-f: Search for a file"
     echo "-s: Search google for keyword"
-    echo "-n: Open a new tab"
+    echo "-w: Open a new window"
     echo "-h: Show this message"
     echo ""
     echo "Use no options to automatically determine what you are searching."
