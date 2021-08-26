@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if echo $* | grep -e "-h" -q
+then
+    echo "Usage:"
+    echo ""
+    echo "\path\to\executable -[OPTIONS] [QUERY] "
+    echo "-f: Search for a file"
+    echo "-s: Search google for keyword"
+    echo "-h: Show this message"
+    echo ""
+    echo "Use no options to automatically determine what you are searching."
+    exit
+
+elif echo $* | grep -e "-f" -q
+then
+    open -a /Applications/Google\ Chrome.app "$1"
+
+elif echo $* | grep -e "-s" -q
+then
+    open -a /Applications/Google\ Chrome.app "https://google.com/search?q=$1"
+
+
+else
+    if test $(find . -name $1 | wc -c) -eq 0
+        then
+        open -a /Applications/Google\ Chrome.app "https://google.com/search?q=$1"
+    else
+        open -a /Applications/Google\ Chrome.app "$1"
+    fi 
+fi
+
